@@ -63,13 +63,13 @@ const Listings = () => {
   }
   return (
     <div className="flex justify-center">
-      <div className="main container md:max-w-[1200px] ">
+      <div className="main container w-full">
         {products.length === 0 ? (
           <p className="text-center mt-8 text-gray-600 text-lg">
             No data found.
           </p>
         ) : (
-          <div className="flex flex-wrap mt-16 -mx-4">
+          <div className="flex flex-wrap mt-16 mx-4">
             {products.map((product) => (
               <div
                 key={product.id}

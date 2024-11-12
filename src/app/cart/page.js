@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
-import 'sweetalert2/dist/sweetalert2.css';
+import "sweetalert2/dist/sweetalert2.css";
 
 const Cart = () => {
   const [restructuredCartItems, setRestructuredCartItems] = useState([]);
@@ -68,18 +68,18 @@ const Cart = () => {
 
   const handleCheckOut = () => {
     Swal.fire({
-      title: 'Order Placed!',
-      text: 'Thank you for shopping with us!',
-      icon: 'success',
-      confirmButtonText: 'OK',
+      title: "Order Placed!",
+      text: "Thank you for shopping with us!",
+      icon: "success",
+      confirmButtonText: "OK",
     }).then(() => {
-      window.location.href = '/';
+      window.location.href = "/";
     });
-  }
-  
+  };
+
   return (
     <div className="flex justify-center">
-      <div className="main container md:max-w-[1200px] ">
+      <div className="main container w-full">
         <div className="grid md:grid-cols-3 grid-cols-1 gap-10 mt-20">
           <div className="col-span-2">
             <h1 className="mb-8 text-2xl font-semibold cursor-pointer">
@@ -110,7 +110,9 @@ const Cart = () => {
                       </div>
 
                       <div>
-                        <p className="md:text-[12px] text-[8px]">{item.title}</p>
+                        <p className="md:text-[12px] text-[8px]">
+                          {item.title}
+                        </p>
                       </div>
 
                       <div>
@@ -172,7 +174,11 @@ const Cart = () => {
                   </p>
                 </div>
 
-                <button disabled={restructuredCartItems.length === 0} onClick={handleCheckOut} className="bg-black w-full disabled:opacity-50 text-white py-2 px-4 rounded-md">
+                <button
+                  disabled={restructuredCartItems.length === 0}
+                  onClick={handleCheckOut}
+                  className="bg-black w-full disabled:opacity-50 text-white py-2 px-4 rounded-md"
+                >
                   Check out
                 </button>
               </div>
